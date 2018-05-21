@@ -2,6 +2,8 @@ import _ from 'lodash';
 
 import './style.css';
 
+import Icon from './icon.png';
+
 function component() {
     var element = document.createElement('div');
 
@@ -9,6 +11,10 @@ function component() {
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
     
     element.classList.add('hello')
+
+    //将图像添加到div
+    var myIcon= new Image();
+    myIcon.src=Icon;
 
     return element;
 }
