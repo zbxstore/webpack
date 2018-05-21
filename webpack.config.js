@@ -3,18 +3,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+//使用模块热替换
+
 module.exports = {
     mode: "production",
     entry: {
         app:'./src/index.js',
-        print: './src/print.js'
     },
-
+    devtool: 'inline-source-map',
+    devServer:{
+        contentBase : './dist',
+        hot:true
+    },
     plugins:[
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: '输出管理'
-        })
+        }),
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
 
     ],
 
