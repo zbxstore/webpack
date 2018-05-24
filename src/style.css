@@ -1,4 +1,7 @@
 .hello {
+    font-size: 30px;
     color: red;
-    background: url('./icon.png');
+/*     ackground: url('./icon.png');
+ */
+
 }
