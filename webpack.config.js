@@ -13,7 +13,7 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer:{
         contentBase : './dist',
-        hot:true
+        hot:true  //启用模块热替换
     },
     plugins:[
         new CleanWebpackPlugin(['dist']),
